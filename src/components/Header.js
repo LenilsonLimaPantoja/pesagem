@@ -57,12 +57,14 @@ const Header = ({ pesquisar, setPesquisar }) => {
                             Home
                             <IoIosArrowForward />
                         </button>
-                        <button onClick={handleSair} className={styles.btn_menu} style={{borderTop: 0}}>
+                        <button onClick={handleSair} className={styles.btn_menu} style={{ borderTop: 0 }}>
                             Sair
                             <IoIosArrowForward />
                         </button>
                     </ul>
-                    <div onClick={() => setMenu(false)} className={styles.fundo} />
+                    <div onClick={() => setMenu(false)} className={styles.fundo} >
+                        <span>Clique Para Fechar</span>
+                    </div>
                 </div>}
         </div>
     )

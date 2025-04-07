@@ -100,11 +100,23 @@
                 }
             }
         }
-        .fundo{
+
+        .fundo {
             background-color: transparent;
             width: 100%;
             height: 100vh;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+
+            span {
+                font-size: 30px;
+                font-weight: bold;
+                color: #fff;
+                text-align: center;
+            }
         }
     }
 
