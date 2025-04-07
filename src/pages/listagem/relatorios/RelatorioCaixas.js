@@ -41,7 +41,7 @@ export const options = {
 };
 
 const RelatorioCaixas = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [pesos, setPesos] = useState([]);
     const params = useParams();
 

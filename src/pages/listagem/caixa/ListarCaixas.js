@@ -12,7 +12,7 @@ import { Apis } from '../../../Apis';
 const ListarCaixas = () => {
     const [caixas, setCaixas] = useState([]);
     const [pesquisar, setPesquisar] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const navigation = useNavigate();
     useEffect(() => {
         handleCaixas();

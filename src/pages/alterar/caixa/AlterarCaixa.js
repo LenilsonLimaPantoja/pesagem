@@ -6,7 +6,7 @@ import Loading from '../../../components/Loading';
 import { AlertErro, AlertSucess } from '../../../components/Alertas';
 import { Apis } from '../../../Apis';
 const AlterarCaixa = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [caixa, setCaixa] = useState([]);
     const navigation = useNavigate();
     const params = useParams();

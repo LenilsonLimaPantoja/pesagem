@@ -6,7 +6,7 @@ import Loading from '../../../components/Loading';
 import { AlertConfirm, AlertErro, AlertSucess } from '../../../components/Alertas';
 import { Apis } from '../../../Apis';
 const AlterarApicultor = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [apicultor, setApicultor] = useState(false);
     const navigation = useNavigate();
 

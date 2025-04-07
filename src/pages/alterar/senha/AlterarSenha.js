@@ -6,7 +6,7 @@ import { AlertErro, AlertSucess } from '../../../components/Alertas';
 import Loading from '../../../components/Loading';
 import { Apis } from '../../../Apis';
 const AlterarSenha = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const navigation = useNavigate();
     const params = useParams();
 
