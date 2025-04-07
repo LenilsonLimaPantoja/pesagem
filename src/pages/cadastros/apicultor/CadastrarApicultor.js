@@ -56,8 +56,8 @@ const CadastrarApicultor = () => {
                     <input type='text' name='nome' placeholder='Insira seu nome' />
                 </label>
                 <label>
-                    <span>Email:</span>
-                    <input type='email' name='email' placeholder='Insira seu email' />
+                    <span>E-mail:</span>
+                    <input type='email' name='email' placeholder='Insira seu e-mail' />
                 </label>
                 <label>
                     <span>Senha:</span>
@@ -70,7 +70,7 @@ const CadastrarApicultor = () => {
                 </label>
                 <button>Cadastrar</button>
                 <div className={styles.footer}>
-                    <a onClick={() => navigation(-1)}>Voltar ao login</a>
+                    <a onClick={() => navigation(-1)}>Acessar minha conta</a>
                 </div>
             </form>
         </div>

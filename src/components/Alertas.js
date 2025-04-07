@@ -42,7 +42,7 @@ export const AlertConfirm = (texto, onConfirm) => {
                         onConfirm();  // Executa a função de confirmação passada como parâmetro
                         toast.dismiss();  // Fecha o toast
                     }}
-                    style={{ cursor: 'pointer', backgroundColor: 'green', color: 'white', border: 'none', flexGrow: '1', borderRadius: 5, padding: 10 }}>Confirmar</button>
+                    style={{ cursor: 'pointer', backgroundColor: 'orange', color: 'white', border: 'none', flexGrow: '1', borderRadius: 5, padding: 10 }}>Confirmar</button>
             </div>
         </div>, {
         position: "top-center",

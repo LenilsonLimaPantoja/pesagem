@@ -91,19 +91,19 @@ const AlterarApicultor = () => {
     return (
         <div className={styles.container_alterar_apicultor}>
             <form onSubmit={handleSubmit}>
-                <h1>ALTERAR APICULTOR</h1>
+                <h1>ATUALIZAR APICULTOR</h1>
                 <label>
                     <span>Nome:</span>
                     <input type='text' name='nome' placeholder='Insira seu nome' defaultValue={apicultor.nome} />
                 </label>
                 <label>
-                    <span>Email:</span>
-                    <input type='email' name='email' placeholder='Insira seu email' defaultValue={apicultor.email} />
+                    <span>E-mail:</span>
+                    <input type='email' name='email' placeholder='Insira seu e-mail' defaultValue={apicultor.email} />
                 </label>
-                <button>Alterar</button>
+                <button>Atualizar</button>
                 <div className={styles.footer}>
-                    <a onClick={() => navigation(-1)}>Voltar a pagina anterior</a>
-                    <a onClick={handleRemoverApicultorConfirm}>Excluir conta</a>
+                    <a onClick={() => navigation(-1)}>Retornar à página anterior</a>
+                    <a style={{textAlign: 'right'}} onClick={handleRemoverApicultorConfirm}>Apagar minha conta</a>
                 </div>
             </form>
         </div>

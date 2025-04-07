@@ -58,7 +58,7 @@ const Login = () => {
                 <button>Acessar</button>
                 <div className={styles.footer}>
                     <a onClick={() => navigation('/apicultor/create')}>Criar conta</a>
-                    <a onClick={() => navigation('/senha/alterar/solicitar')}>Esqueceu sua senha?</a>
+                    <a onClick={() => navigation('/senha/alterar/solicitar')}>Esqueci minha senha</a>
                 </div>
             </form>
         </div>

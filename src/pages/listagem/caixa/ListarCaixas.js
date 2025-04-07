@@ -82,11 +82,11 @@ const ListarCaixas = () => {
                 {caixas?.length > 0 ?
                     <div className={styles.area_card_caixa}>
                         {caixas?.map((item) => (
-                            <div key={item?.id} className={styles.card_caixa}>
+                            <div key={item?.id} className={styles.card_caixa} title={`Visualizar gráfico da caixa ${item?.id}`}>
                                 <div className={styles.card_click} onClick={item?.peso_atual ? () => navigation(`/caixa/relatorio/${item?.id}`) : () => AlertErro(`Peso não registrado para a caixa ${item?.id}`)} />
                                 <span className={styles.identificador_balanca}>ID: {item?.identificador_balanca}</span>
-                                <span className={styles.criado_em}>Criado Em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
-                                <span className={styles.observacao}>Obs: {item?.observacao}</span>
+                                <span className={styles.criado_em}>Criado em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
+                                <span className={styles.observacao}>Observação: {item?.observacao}</span>
                                 <span className={styles.observacao}>Peso atual: {item?.peso_atual ? item?.peso_atual : 'Não medido'}</span>
                                 <div className={styles.btns_card}>
                                     <button className={styles.alterar} onClick={() => navigation(`/caixa/alterar/${item?.id}`)}>alterar</button>

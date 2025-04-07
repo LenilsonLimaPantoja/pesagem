@@ -68,18 +68,18 @@ const AlterarCaixa = () => {
     return (
         <div className={styles.container_alterar_caixa}>
             <form onSubmit={handleSubmit}>
-                <h1>ALTERAR CAIXA</h1>
+                <h1>ATUALIZAR CAIXA</h1>
                 <label>
                     <span>Observação:</span>
                     <input type='text' name='observacao' placeholder='Insira uma observação' defaultValue={caixa?.observacao} />
                 </label>
                 <label>
-                    <span>Identificador Balança:</span>
+                    <span>Identificador da Balança:</span>
                     <input type='text' name='identificador_balanca' placeholder='Insira o identificador da balança' defaultValue={caixa?.identificador_balanca} />
                 </label>
-                <button>Alterar</button>
+                <button>Atualizar</button>
                 <div className={styles.footer}>
-                    <a onClick={() => navigation(-1)}>Voltar a pagina anterior</a>
+                    <a onClick={() => navigation(-1)}>Retornar à página anterior</a>
                 </div>
             </form>
         </div>

@@ -62,7 +62,7 @@ const AlterarSenha = () => {
     return (
         <div className={styles.container_login}>
             <form onSubmit={handleSubmit}>
-                <h1>ALTERAR SENHA</h1>
+                <h1>ATUALIZAR SENHA</h1>
                 <label>
                     <span>Senha:</span>
                     <input type='password' name='senha' placeholder='Insira sua senha' />
@@ -71,9 +71,9 @@ const AlterarSenha = () => {
                     <span>Confirmar Senha:</span>
                     <input type='password' name='confirmar_senha' placeholder='Confirmar sua senha' />
                 </label>
-                <button>Alterar</button>
+                <button>Atualizar</button>
                 <div className={styles.footer}>
-                    <a onClick={() => navigation('/', { replace: true })}>Ir para fazer login</a>
+                    <a onClick={() => navigation('/', { replace: true })}>Acessar minha conta</a>
                 </div>
             </form>
         </div>

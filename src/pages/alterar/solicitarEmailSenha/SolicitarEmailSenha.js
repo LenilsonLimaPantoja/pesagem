@@ -44,12 +44,12 @@ const SolicitarEmailSenha = () => {
             <form onSubmit={handleSubmit}>
                 <h1>SOLITAR TROCA DE SENHA</h1>
                 <label>
-                    <span>Email:</span>
-                    <input type='email' name='email' placeholder='Insira seu email' />
+                    <span>E-mail:</span>
+                    <input type='email' name='email' placeholder='Insira seu e-mail' />
                 </label>
                 <button>Solicitar</button>
                 <div className={styles.footer}>
-                    <a onClick={() => navigation(-1)}>Voltar ao login</a>
+                    <a onClick={() => navigation(-1)}>Acessar minha conta</a>
                 </div>
             </form>
         </div>
