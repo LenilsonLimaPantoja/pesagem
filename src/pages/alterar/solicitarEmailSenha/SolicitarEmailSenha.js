@@ -32,7 +32,6 @@ const SolicitarEmailSenha = () => {
             navigation('/', { replace: true });
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
-        }finally {
             setLoading(false);
         }
     }

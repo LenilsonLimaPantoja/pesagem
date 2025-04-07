@@ -40,7 +40,6 @@ const CadastrarApicultor = () => {
 
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
-        }finally {
             setLoading(false);
         }
     }

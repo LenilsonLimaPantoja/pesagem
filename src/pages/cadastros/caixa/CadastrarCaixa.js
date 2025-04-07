@@ -55,7 +55,7 @@ const CadastrarCaixa = () => {
                 </label>
                 <button>Cadastrar</button>
                 <div className={styles.footer}>
-                    <a onClick={() => navigation(-1)}>Voltar a pagina anterior</a>
+                    <a onClick={() => navigation(-1)}>Retornar à página anterior</a>
                 </div>
             </form>
         </div>

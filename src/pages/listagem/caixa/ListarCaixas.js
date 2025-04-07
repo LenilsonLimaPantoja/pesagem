@@ -7,7 +7,6 @@ import { FiPlus } from "react-icons/fi";
 import Loading from '../../../components/Loading';
 import { AlertConfirm, AlertErro, AlertSucess } from '../../../components/Alertas';
 import { Apis } from '../../../Apis';
-import { IoCloseOutline } from "react-icons/io5";
 import SemRegistros from '../../../components/SemRegistros';
 
 const ListarCaixas = () => {

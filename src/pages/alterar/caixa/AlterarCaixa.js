@@ -28,7 +28,7 @@ const AlterarCaixa = () => {
             setCaixa(response.data.registros[0]);
         } catch (error) {
             alert(error.response.data.retorno.mensagem);
-        }finally {
+        } finally {
             setLoading(false);
         }
     }
@@ -57,7 +57,6 @@ const AlterarCaixa = () => {
 
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
-        }finally{
             setLoading(false);
         }
 

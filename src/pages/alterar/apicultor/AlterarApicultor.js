@@ -58,7 +58,6 @@ const AlterarApicultor = () => {
             navigation(-1);
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
-        } finally {
             setLoading(false);
         }
 
@@ -103,7 +102,7 @@ const AlterarApicultor = () => {
                 <button>Atualizar</button>
                 <div className={styles.footer}>
                     <a onClick={() => navigation(-1)}>Retornar à página anterior</a>
-                    <a style={{textAlign: 'right'}} onClick={handleRemoverApicultorConfirm}>Apagar minha conta</a>
+                    <a style={{ textAlign: 'right' }} onClick={handleRemoverApicultorConfirm}>Apagar minha conta</a>
                 </div>
             </form>
         </div>
