@@ -127,8 +127,8 @@
         column-gap: 5px;
 
         button {
-            height: 60px;
-            width: 60px;
+            min-height: 60px;
+            min-width: 60px;
             border-radius: 50%;
             border: none;
             cursor: pointer;
