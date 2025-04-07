@@ -1,0 +1,63 @@
+.container_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(90deg, rgba(255, 176, 9, .7) 0%, rgba(255, 176, 9, .7) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+
+    .btns_menu {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+
+        button {
+            padding: 10px;
+            height: 40px;
+            border: none;
+            max-width: 100px;
+            flex-grow: 1;
+            border-radius: 0px !important;
+            background-color: transparent;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .info_user {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+
+        button {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 165, 0);
+            position: relative;
+
+            .icone_user {
+                font-size: 35px;
+            }
+
+            .icone_editar {
+                position: absolute;
+                bottom: 6px;
+                right: 5px;
+                font-size: 15px;
+            }
+        }
+
+        span {
+            font-size: 20px;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+    }
+}
