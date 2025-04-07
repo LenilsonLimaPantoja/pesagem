@@ -72,7 +72,7 @@ const ListarCaixas = () => {
 
                 <div className={styles.form_pesquisar}>
                     <input type='text' defaultValue={pesquisar} onChange={(e) => setPesquisar(e.target.value)} name='pesquisar' placeholder='Informe o ID ou a observação para pesquisar' />
-                    <button onClick={() => {
+                    <button disabled={!pesquisar} onClick={() => {
                         setPesquisar('');
                         setLoading(true);
                     }}>
