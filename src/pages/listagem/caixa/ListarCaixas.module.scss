@@ -12,38 +12,6 @@
         align-items: center;
         row-gap: 20px;
 
-        .form_pesquisar {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            column-gap: 3px;
-
-            input {
-                padding: 10px;
-                width: 100%;
-                max-width: 500px;
-                border-radius: 0px;
-                height: 40px;
-                outline: none;
-                border: none;
-            }
-
-            button {
-                height: 40px;
-                width: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: none;
-                background-color: #ffffff;
-                cursor: pointer;
-
-                svg {
-                    font-size: 20px;
-                }
-            }
-        }
-
         .area_card_caixa {
             width: 100%;
             display: flex;
@@ -130,13 +98,6 @@
                     }
                 }
             }
-        }
-
-        .sem_registros {
-            margin-top: 50px;
-            font-size: 50px;
-            font-weight: bold;
-            text-align: center;
         }
 
         .btn_add_caixa {

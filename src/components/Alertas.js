@@ -2,7 +2,7 @@ import { Bounce, toast } from "react-toastify"
 
 export const AlertSucess = (texto) => {
     toast.success(`${texto}`, {
-        position: "top-right",
+        position: "top-left",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: false,
@@ -18,7 +18,7 @@ export const AlertSucess = (texto) => {
 
 export const AlertErro = (texto) => {
     toast.error(`${texto}`, {
-        position: "top-right",
+        position: "top-left",
         autoClose: 5000,
         icon: false,
         hideProgressBar: false,

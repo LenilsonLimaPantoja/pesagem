@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import Header from '../../../components/Header';
 import { useNavigate } from 'react-router-dom';
 import { FiPlus } from "react-icons/fi";
-import { IoIosSearch } from "react-icons/io";
 import Loading from '../../../components/Loading';
 import { AlertConfirm, AlertErro, AlertSucess } from '../../../components/Alertas';
 import { Apis } from '../../../Apis';
 import { IoCloseOutline } from "react-icons/io5";
+import SemRegistros from '../../../components/SemRegistros';
 
 const ListarCaixas = () => {
     const [caixas, setCaixas] = useState([]);
@@ -65,21 +65,10 @@ const ListarCaixas = () => {
         return <Loading />
     }
     return (
-        <div className={styles.view_caixas}>
-            <Header />
-            <div className={styles.container_listar_caixas}>
-
-
-                <div className={styles.form_pesquisar}>
-                    <input type='text' defaultValue={pesquisar} onChange={(e) => setPesquisar(e.target.value)} name='pesquisar' placeholder='Informe o ID ou a observação para pesquisar' />
-                    <button disabled={!pesquisar} onClick={() => {
-                        setPesquisar('');
-                        setLoading(true);
-                    }}>
-                        <IoCloseOutline />
-                    </button>
-                </div>
-                {caixas?.length > 0 ?
+        caixas?.length > 0 ?
+            <div className={styles.view_caixas}>
+                <Header setPesquisar={setPesquisar} pesquisar={pesquisar} />
+                <div className={styles.container_listar_caixas}>
                     <div className={styles.area_card_caixa}>
                         {caixas?.map((item) => (
                             <div key={item?.id} className={styles.card_caixa} title={`Visualizar gráfico da caixa ${item?.id}`}>
@@ -95,14 +84,14 @@ const ListarCaixas = () => {
                             </div>
                         ))}
                     </div>
-                    :
-                    <span className={styles.sem_registros}>Nenhuma caixa foi localizada</span>
-                }
-                <button title='Adicionar nova caixa' className={styles.btn_add_caixa} onClick={() => navigation('/caixa/create')}>
-                    <FiPlus />
-                </button>
+
+                    <button title='Adicionar nova caixa' className={styles.btn_add_caixa} onClick={() => navigation('/caixa/create')}>
+                        <FiPlus />
+                    </button>
+                </div>
             </div>
-        </div>
+            :
+            <SemRegistros  setPesquisar={setPesquisar} pesquisar={pesquisar}/>
     )
 }
 export default ListarCaixas;

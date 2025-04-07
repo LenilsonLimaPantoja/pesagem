@@ -6,26 +6,104 @@
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
+    column-gap: 50px;
+    height: 100px;
 
     .btns_menu {
         display: flex;
         flex-grow: 1;
         justify-content: flex-end;
+        align-items: center;
+        column-gap: 20px;
 
-        button {
-            padding: 10px;
-            height: 40px;
-            border: none;
-            max-width: 100px;
-            flex-grow: 1;
-            border-radius: 0px !important;
-            background-color: transparent;
-            font-size: 20px;
+        svg {
+            font-size: 30px;
             cursor: pointer;
+        }
+
+        .input_pesquisar {
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-grow: 1;
+            max-width: 800px;
+            border-radius: 3px;
+            overflow: hidden;
+            padding: 10px;
+
+            input {
+                width: 100%;
+                padding: 5px 10px;
+                border: none;
+                outline: none;
+            }
+
+            svg {
+                color: gray;
+                font-size: 25px;
+            }
         }
     }
 
-    .info_user {
+    .menu {
+        position: fixed;
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 41%);
+        width: 100%;
+        height: 100vh;
+        left: 0px;
+        top: 0px;
+        z-index: 99;
+
+        ul {
+            padding: 10px 10px 30px 10px;
+            background-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: flex;
+            flex-direction: column;
+            min-width: 250px;
+            row-gap: 10px;
+            background: linear-gradient(90deg, rgba(255, 176, 9, .7) 0%, rgba(255, 176, 9, .7) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+
+            .close_menu {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-bottom: 10px;
+
+                svg {
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+            }
+
+            button {
+                padding: 15px;
+                text-align: left;
+                border: 0px;
+                font-size: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #dbc43f;
+                cursor: pointer;
+                border-radius: 3px;
+                font-size: 20px;
+
+                svg {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .info_user,
+    .info_user_menu {
         display: flex;
         align-items: center;
         column-gap: 5px;
@@ -58,6 +136,19 @@
             font-size: 20px;
             text-transform: capitalize;
             font-weight: bold;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .info_user_menu {
+            display: none;
+        }
+
+        .btns_menu {
+
+            .input_pesquisar {
+                max-width: none;
+            }
         }
     }
 }
