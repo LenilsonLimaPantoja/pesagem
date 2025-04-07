@@ -8,15 +8,21 @@ import { IoIosSearch } from "react-icons/io";
 import Loading from '../../../components/Loading';
 import { AlertConfirm, AlertErro, AlertSucess } from '../../../components/Alertas';
 import { Apis } from '../../../Apis';
+import { IoCloseOutline } from "react-icons/io5";
 
 const ListarCaixas = () => {
     const [caixas, setCaixas] = useState([]);
     const [pesquisar, setPesquisar] = useState('');
     const [loading, setLoading] = useState(true);
     const navigation = useNavigate();
+
     useEffect(() => {
-        handleCaixas();
-    }, []);
+        const delayDebounce = setTimeout(() => {
+            handleCaixas();
+        }, 1000);
+
+        return () => clearTimeout(delayDebounce);
+    }, [pesquisar]);
 
     const handleCaixas = async () => {
         try {
@@ -32,7 +38,7 @@ const ListarCaixas = () => {
         } catch (error) {
             setCaixas([]);
             AlertErro(error.response.data.retorno.mensagem);
-        }finally {
+        } finally {
             setLoading(false);
         }
     }
@@ -66,8 +72,11 @@ const ListarCaixas = () => {
 
                 <div className={styles.form_pesquisar}>
                     <input type='text' defaultValue={pesquisar} onChange={(e) => setPesquisar(e.target.value)} name='pesquisar' placeholder='Informe o ID ou a observação para pesquisar' />
-                    <button onClick={handleCaixas}>
-                        <IoIosSearch />
+                    <button onClick={() => {
+                        setPesquisar('');
+                        setLoading(true);
+                    }}>
+                        <IoCloseOutline />
                     </button>
                 </div>
                 {caixas?.length > 0 ?
