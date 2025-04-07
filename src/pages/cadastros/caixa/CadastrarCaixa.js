@@ -31,13 +31,12 @@ const CadastrarCaixa = () => {
             const response = await axios.post(Apis.urlCaixa, formValues, requestoptions);
             console.log(response.data.retorno);
             AlertSucess(response?.data.retorno.mensagem);
-            setLoading(false);
 
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
+        }finally {
             setLoading(false);
         }
-
     }
     if (loading) {
         return <Loading />

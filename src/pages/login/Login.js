@@ -33,13 +33,12 @@ const Login = () => {
             const response = await axios.post(`${Apis.urlApicultor}/login`, formValues, requestoptions);
             localStorage.setItem('@pesagem_token', response?.data.registros.token);
             localStorage.setItem('@pesagem_nome', response?.data.registros.nome);
-            setLoading(false);
             navigation('/home', { replace: true });
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
+        }finally {
             setLoading(false);
         }
-
     }
     if (loading) {
         return <Loading />

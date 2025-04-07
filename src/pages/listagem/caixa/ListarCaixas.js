@@ -17,6 +17,7 @@ const ListarCaixas = () => {
     useEffect(() => {
         handleCaixas();
     }, []);
+
     const handleCaixas = async () => {
         try {
             const requestOptions = {
@@ -28,10 +29,10 @@ const ListarCaixas = () => {
 
             const response = await axios.get(`${Apis.urlCaixa}/filtro?obs_identificador=${pesquisar}`, requestOptions);
             setCaixas(response.data.registros);
-            setLoading(false);
         } catch (error) {
             setCaixas([]);
             AlertErro(error.response.data.retorno.mensagem);
+        }finally {
             setLoading(false);
         }
     }

@@ -16,7 +16,6 @@ const AlterarApicultor = () => {
     }, []);
 
     const handleApicultor = async () => {
-
         try {
             setLoading(true);
             const requestoptions = {
@@ -27,10 +26,10 @@ const AlterarApicultor = () => {
 
             const response = await axios.get(Apis.urlApicultor, requestoptions);
             setApicultor(response.data.registros[0]);
-            setLoading(false);
 
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
+        } finally {
             setLoading(false);
         }
     }
@@ -56,10 +55,10 @@ const AlterarApicultor = () => {
             const response = await axios.put(Apis.urlApicultor, formValues, requestoptions);
             AlertSucess(response?.data.retorno.mensagem);
             localStorage.setItem('@pesagem_nome', formValues?.nome);
-            setLoading(false);
             navigation(-1);
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
+        } finally {
             setLoading(false);
         }
 
@@ -71,6 +70,7 @@ const AlterarApicultor = () => {
 
     const handleRemoverApicultor = async () => {
         try {
+            setLoading(true);
             const requestOptions = {
                 headers: {
                     'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesagem_token')}`

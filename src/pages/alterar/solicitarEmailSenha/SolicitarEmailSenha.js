@@ -1,6 +1,6 @@
 import axios from 'axios';
 import styles from './SolicitarEmailSenha.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Loading from '../../../components/Loading';
 import { useNavigate } from 'react-router-dom';
 import { AlertErro, AlertSucess } from '../../../components/Alertas';
@@ -29,13 +29,12 @@ const SolicitarEmailSenha = () => {
 
             const response = await axios.post(`${Apis.urlApicultor}/senha`, formValues, requestoptions);
             AlertSucess(response?.data.retorno.mensagem);
-            setLoading(false);
             navigation('/', { replace: true });
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
+        }finally {
             setLoading(false);
         }
-
     }
     if (loading) {
         return <Loading />

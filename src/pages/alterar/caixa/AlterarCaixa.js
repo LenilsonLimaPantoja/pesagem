@@ -17,6 +17,7 @@ const AlterarCaixa = () => {
 
     const handleCaixas = async () => {
         try {
+            setLoading(true);
             const requestOptions = {
                 headers: {
                     'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesagem_token')}`
@@ -27,6 +28,8 @@ const AlterarCaixa = () => {
             setCaixa(response.data.registros[0]);
         } catch (error) {
             alert(error.response.data.retorno.mensagem);
+        }finally {
+            setLoading(false);
         }
     }
 
@@ -50,11 +53,11 @@ const AlterarCaixa = () => {
 
             const response = await axios.put(`${Apis.urlCaixa}/${params.caixa_id}`, formValues, requestoptions);
             AlertSucess(response?.data.retorno.mensagem);
-            setLoading(false);
             navigation(-1)
 
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
+        }finally{
             setLoading(false);
         }
 
