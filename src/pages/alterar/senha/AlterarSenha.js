@@ -22,6 +22,7 @@ const AlterarSenha = () => {
             AlertErro(error.response?.data.retorno.mensagem);
             localStorage.clear();
             navigation('/', { replace: true });
+        } finally {
             setLoading(false);
         }
     }
