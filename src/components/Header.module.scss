@@ -154,6 +154,13 @@
             font-size: 20px;
             text-transform: capitalize;
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            @media (max-width: 550px) {
+                max-width: 100px;
+            }
         }
     }
 
