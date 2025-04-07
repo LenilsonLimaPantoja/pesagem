@@ -47,9 +47,9 @@ const Header = ({ pesquisar, setPesquisar }) => {
             {menu &&
                 <div className={styles.menu}>
                     <ul>
-                        <div className={styles.close_menu}>
+                        {/* <div className={styles.close_menu}>
                             <IoCloseOutline onClick={() => setMenu(false)} />
-                        </div>
+                        </div> */}
                         <button onClick={() => {
                             navigation('/home');
                             setMenu(false);
@@ -57,11 +57,12 @@ const Header = ({ pesquisar, setPesquisar }) => {
                             Home
                             <IoIosArrowForward />
                         </button>
-                        <button onClick={handleSair} className={styles.btn_menu}>
+                        <button onClick={handleSair} className={styles.btn_menu} style={{borderTop: 0}}>
                             Sair
                             <IoIosArrowForward />
                         </button>
                     </ul>
+                    <div onClick={() => setMenu(false)} className={styles.fundo} />
                 </div>}
         </div>
     )

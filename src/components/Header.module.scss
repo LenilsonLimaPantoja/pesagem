@@ -6,7 +6,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
-    column-gap: 50px;
+    column-gap: 100px;
     height: 100px;
 
     .btns_menu {
@@ -56,7 +56,7 @@
         z-index: 99;
 
         ul {
-            padding: 10px 10px 30px 10px;
+            padding: 10px;
             background-color: #fff;
             position: absolute;
             right: 10px;
@@ -64,7 +64,6 @@
             display: flex;
             flex-direction: column;
             min-width: 250px;
-            row-gap: 10px;
             background: linear-gradient(90deg, rgba(255, 176, 9, .7) 0%, rgba(255, 176, 9, .7) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
             background-size: cover;
             background-repeat: no-repeat;
@@ -92,13 +91,20 @@
                 justify-content: space-between;
                 background-color: #dbc43f;
                 cursor: pointer;
-                border-radius: 3px;
+                // border-radius: 3px;
                 font-size: 20px;
+                border: solid 1px rgb(255, 165, 0);
 
                 svg {
                     font-size: 20px;
                 }
             }
+        }
+        .fundo{
+            background-color: transparent;
+            width: 100%;
+            height: 100vh;
+            cursor: pointer;
         }
     }
 
