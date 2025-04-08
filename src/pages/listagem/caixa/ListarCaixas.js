@@ -7,7 +7,7 @@ import { FiPlus } from "react-icons/fi";
 import Loading from '../../../components/Loading';
 import { AlertConfirm, AlertErro, AlertSucess } from '../../../components/Alertas';
 import { Apis } from '../../../Apis';
-import SemRegistros from '../../../components/SemRegistros';
+import img_sem_registros from '../../../assets/fundo.png';
 
 const ListarCaixas = () => {
     const [caixas, setCaixas] = useState([]);
@@ -64,33 +64,34 @@ const ListarCaixas = () => {
         return <Loading />
     }
     return (
-        caixas?.length > 0 ?
-            <div className={styles.view_caixas}>
-                <Header setPesquisar={setPesquisar} pesquisar={pesquisar} />
-                <div className={styles.container_listar_caixas}>
-                    <div className={styles.area_card_caixa}>
-                        {caixas?.map((item) => (
-                            <div key={item?.id} className={styles.card_caixa} title={`Visualizar gráfico da caixa ${item?.id}`}>
-                                <div className={styles.card_click} onClick={item?.peso_atual ? () => navigation(`/caixa/relatorio/${item?.id}`) : () => AlertErro(`Peso não registrado para a caixa ${item?.id}`)} />
-                                <span className={styles.identificador_balanca}>ID: {item?.identificador_balanca}</span>
-                                <span className={styles.criado_em}>Criado em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
-                                <span className={styles.observacao}>Observação: {item?.observacao}</span>
-                                <span className={styles.observacao}>Peso atual: {item?.peso_atual ? item?.peso_atual : 'Não medido'}</span>
-                                <div className={styles.btns_card}>
-                                    <button className={styles.alterar} onClick={() => navigation(`/caixa/alterar/${item?.id}`)}>alterar</button>
-                                    <button onClick={() => handleRemoverCaixaConfirme(item?.id)}>remover</button>
+        <div className={styles.view_caixas}>
+            <Header setPesquisar={setPesquisar} pesquisar={pesquisar} setLoading={setLoading}/>
+            <div className={styles.container_listar_caixas}>
+                {
+                    caixas?.length > 0 ?
+                        <div className={styles.area_card_caixa}>
+                            {caixas?.map((item) => (
+                                <div key={item?.id} className={styles.card_caixa} title={`Visualizar gráfico da caixa ${item?.id}`}>
+                                    <div className={styles.card_click} onClick={item?.peso_atual ? () => navigation(`/caixa/relatorio/${item?.id}`) : () => AlertErro(`Peso não registrado para a caixa ${item?.id}`)} />
+                                    <span className={styles.identificador_balanca}>ID: {item?.identificador_balanca}</span>
+                                    <span className={styles.criado_em}>Criado em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
+                                    <span className={styles.observacao}>Observação: {item?.observacao}</span>
+                                    <span className={styles.observacao}>Peso atual: {item?.peso_atual ? item?.peso_atual : 'Não medido'}</span>
+                                    <div className={styles.btns_card}>
+                                        <button className={styles.alterar} onClick={() => navigation(`/caixa/alterar/${item?.id}`)}>alterar</button>
+                                        <button onClick={() => handleRemoverCaixaConfirme(item?.id)}>remover</button>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <button title='Adicionar nova caixa' className={styles.btn_add_caixa} onClick={() => navigation('/caixa/create')}>
-                        <FiPlus />
-                    </button>
-                </div>
+                            ))}
+                        </div>
+                        :
+                        <img src={img_sem_registros} alt="sem registros" className={styles.img_sem_registros} />
+                }
+                <button title='Adicionar nova caixa' className={styles.btn_add_caixa} onClick={() => navigation('/caixa/create')}>
+                    <FiPlus />
+                </button>
             </div>
-            :
-            <SemRegistros  setPesquisar={setPesquisar} pesquisar={pesquisar}/>
+        </div>
     )
 }
 export default ListarCaixas;

@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { IoIosArrowForward } from "react-icons/io";
 import { CgMenuRight } from "react-icons/cg";
 
-const Header = ({ pesquisar, setPesquisar }) => {
+const Header = ({ pesquisar, setPesquisar, setLoading }) => {
     const navigation = useNavigate();
     const [menu, setMenu] = useState(false);
     const [openClosePesquisar, setOpenClosePesquisar] = useState(pesquisar ? true : false);
@@ -35,6 +35,7 @@ const Header = ({ pesquisar, setPesquisar }) => {
                         <IoCloseOutline onClick={() => {
                             setPesquisar('');
                             setOpenClosePesquisar(false);
+                            setLoading(true);
                         }} />
                     </div>
                     :
