@@ -35,7 +35,7 @@ const Header = ({ pesquisar, setPesquisar, setLoading }) => {
                         <IoCloseOutline onClick={() => {
                             setPesquisar('');
                             setOpenClosePesquisar(false);
-                            setLoading(true);
+                            pesquisar && setLoading(true);
                         }} />
                     </div>
                     :

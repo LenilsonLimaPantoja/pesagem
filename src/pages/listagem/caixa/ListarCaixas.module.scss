@@ -28,7 +28,7 @@
                 background-color: yellow;
                 flex-grow: 1;
                 min-width: 300px;
-                max-width: 300px;
+                max-width: 350px;
                 min-height: 300px;
                 flex-basis: 0;
                 height: auto;
@@ -100,46 +100,42 @@
                         background-color: rgb(255, 165, 0);
                     }
                 }
-            }
-        }
 
-        .img_sem_registros{
-            height: 100%;
-            max-height: 250px;
-            object-fit: cover;
-        }
-        .btn_add_caixa {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background-color: rgb(255, 165, 0);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: .5s ease-in-out;
-
-            svg {
-                font-size: 25px;
-                color: #ffffff;
-            }
-
-            &:hover {
-                opacity: .8;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .area_card_caixa {
-
-                .card_caixa {
+                @media (max-width: 670px) {
                     max-width: none;
                 }
             }
+        }
+    }
+
+    .img_sem_registros {
+        height: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .btn_add_caixa {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: rgb(255, 165, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+
+        svg {
+            font-size: 25px;
+            color: #ffffff;
+        }
+
+        &:hover {
+            opacity: .8;
         }
     }
 }
