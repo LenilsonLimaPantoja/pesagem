@@ -76,7 +76,7 @@ const ListarCaixas = () => {
                                     <span className={styles.identificador_balanca}>ID: {item?.identificador_balanca}</span>
                                     <span className={styles.criado_em}>Criado em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
                                     <span className={styles.observacao}>Observação: {item?.observacao}</span>
-                                    <span className={styles.observacao}>Peso atual: {item?.peso_atual ? item?.peso_atual : 'Não medido'} g</span>
+                                    <span className={styles.observacao}>Peso atual: {item?.peso_atual ? item?.peso_atual : 'Não medido'}g</span>
                                     <div className={styles.btns_card}>
                                         <button className={styles.alterar} onClick={() => navigation(`/caixa/alterar/${item?.id}`)}>alterar</button>
                                         <button onClick={() => handleRemoverCaixaConfirme(item?.id)}>remover</button>
