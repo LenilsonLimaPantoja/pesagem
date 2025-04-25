@@ -79,7 +79,7 @@ const ListarCaixas = () => {
                                     <span className={styles.observacao}>Peso atual: {item?.peso_atual ? item?.peso_atual : 'Não medido'}</span>
                                     <div className={styles.btns_card}>
                                         <button className={styles.alterar} onClick={() => navigation(`/caixa/alterar/${item?.id}`)}>alterar</button>
-                                        <button onClick={() => handleRemoverCaixaConfirme(item?.id)}>remover</button>
+                                        <button onClick={() => handleRemoverCaixaConfirme(item?.id)}>CALA A BOCA</button>
                                     </div>
                                 </div>
                             ))}
