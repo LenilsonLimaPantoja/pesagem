@@ -1,3 +1,4 @@
+// const BASE_URL = 'https://api-pesagem.vercel.app/'
 const BASE_URL = 'https://api-pesagem.vercel.app/'
 export const Apis = {
     urlApicultor: BASE_URL + 'apicultor',

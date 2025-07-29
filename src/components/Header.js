@@ -48,9 +48,6 @@ const Header = ({ pesquisar, setPesquisar, setLoading }) => {
             {menu &&
                 <div className={styles.menu}>
                     <ul>
-                        {/* <div className={styles.close_menu}>
-                            <IoCloseOutline onClick={() => setMenu(false)} />
-                        </div> */}
                         <button onClick={() => {
                             navigation('/home');
                             setMenu(false);
