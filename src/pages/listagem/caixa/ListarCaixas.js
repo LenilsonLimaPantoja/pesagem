@@ -74,9 +74,9 @@ const ListarCaixas = () => {
                             {caixas?.map((item) => (
                                 <div style={{ border: parseFloat(item?.peso_atual) >= parseFloat(item?.limite_peso) ? 'solid 2px green' : 'none' }} key={item?.id} className={styles.card_caixa} title={`Visualizar gráfico da caixa ${item?.id}`}>
                                     <div className={styles.card_click} onClick={parseFloat(item?.peso_atual) ? () => navigation(`/caixa/relatorio/${item?.id}`) : () => AlertErro(`Peso não registrado para a caixa ${item?.id}`)} />
-                                    <span className={styles.identificador_balanca}>ID: {item?.identificador_balanca}</span>
-                                    <span className={styles.criado_em}>Criado em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
+                                    <span className={styles.identificador_balanca}>{item?.identificador_balanca}</span>
                                     <span className={styles.observacao}>Observação: {item?.observacao}</span>
+                                    <span className={styles.criado_em}>Criado em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
                                     <span className={styles.observacao}>Peso atual: {item?.peso_atual ? parseFloat(item?.peso_atual).toFixed(2) : 'Não medido'}</span>
                                     <span className={styles.observacao}
                                         style={{ color: parseFloat(item?.peso_atual) >= parseFloat(item?.limite_peso) ? 'green' : '#000' }}
