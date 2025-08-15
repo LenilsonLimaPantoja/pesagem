@@ -77,7 +77,7 @@ const AlterarCaixa = () => {
                     <input type='text' name='identificador_balanca' placeholder='Insira o identificador da balança' defaultValue={caixa?.identificador_balanca} />
                 </label>
                 <label>
-                    <span>Identificador da Balança:</span>
+                    <span>Limite de Peso:</span>
                     <input type='text' name='limite_peso' placeholder='Insira um limite de peso para a caixa (g)' defaultValue={caixa?.limite_peso} />
                 </label>
                 <button>Atualizar</button>
