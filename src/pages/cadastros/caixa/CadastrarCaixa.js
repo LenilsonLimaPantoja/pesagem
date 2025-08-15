@@ -34,7 +34,7 @@ const CadastrarCaixa = () => {
 
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
-        }finally {
+        } finally {
             setLoading(false);
         }
     }
@@ -52,6 +52,10 @@ const CadastrarCaixa = () => {
                 <label>
                     <span>Identificador Balança:</span>
                     <input type='text' name='identificador_balanca' placeholder='Insira o identificador da balança' />
+                </label>
+                <label>
+                    <span>Limite de Peso:</span>
+                    <input type='number' name='limite_peso' placeholder='Insira um limite de peso para a caixa (g)' />
                 </label>
                 <button>Cadastrar</button>
                 <div className={styles.footer}>

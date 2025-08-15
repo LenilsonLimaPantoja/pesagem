@@ -60,8 +60,6 @@ const RelatorioCaixas = () => {
 
             const response = await axios.get(`${Apis.urlPesoCaixa}/${params?.caixa_id}`, requestOptions);
             setPesos(response.data.registros);
-            console.log(response.data);
-            
         } catch (error) {
             AlertErro(error.response.data.retorno.mensagem);
             console.log(error.response.data);
